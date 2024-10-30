@@ -1,33 +1,67 @@
 @charset "utf-8";
 /* PC用のCSSはメディアクエリの外に記述する */
-
 @media screen and (max-width: 959px) {
+
   /* 959px以下に適用されるCSS（タブレット用） */
+  body {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 480px) {
+
   /* 480px以下に適用されるCSS（スマホ用） */
+  body {
+    width: 80%;
+  }
 }
 
 body {
   background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrwMOsnbNlG0dDqM7FVo6Z2wFJNTBrrs1c9zqyxsz3o6LUa4tFaQS_aXlJ14NXQNg4C9FXGBQ2KIUMqDGNibMTzwGnFSX-j88uY9MOlAuFI_4GjSVbECMobQ7zr7W_OOWiWvuPX3G5-r80/s800/fish_bluegill2.png);
   overflow-x: scroll;
   overflow-y: scroll;
+  max-width: 1000px;
 }
 
 .header-logo {
-  height: 100px;
-  width: 400px;
+  max-width: 70%;
+  height: auto;
 }
 
+@media screen and (max-width: 480px) {
+  .header-logo {
+    width: 80%;
+  }
+}
 
 header h2 {
   font-size: 50px;
 }
 
-.main-part {
-  padding: 100px 100px;
+@media screen and (max-width: 480px) {
+  header h2 {
+    font-size: 30px;
+  }
 }
+
+
+
+.main-part {
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 2000px;
+  height: auto;
+}
+
+@media screen and (max-width: 480px) {
+  .main-part {
+    width: 1300px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
 
 
 .adult-info h1 {
@@ -48,18 +82,11 @@ header h2 {
   margin-top: auto;
 }
 
-.quiz-section {
-  position: absolute;
-  left: 1000px;
-  bottom: 150px;
-}
-
-/*ここはなかなか無理やりにしているので改善すること */
+.quiz-section
+/*ここはなかなか無理やりにしているので改善すること(追記）.quiz-sectionを無くすと何故かquizの画像リンクの位置がずれる */
 
 
 .quiz-section h1 {
-  position: relative;
-  top: 90px;
   font-size: 50px;
   display: inline-block;
   border-bottom: 3px solid black;
@@ -69,6 +96,14 @@ header h2 {
   background-color: azure;
   border: 10px solid black;
   font-family: serif;
+  width: 800px;
+  height: 900px;
+}
+
+@media screen and (max-width: 480px) {
+  .footer-self {
+    width: 350px;
+  }
 }
 
 .footer-self span {
